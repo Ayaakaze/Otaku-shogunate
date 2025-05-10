@@ -25,32 +25,9 @@
             100% { background-position: 0% 50%; }
         }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.9);
-            padding: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        nav a {
-            margin: 0 1.5rem;
-            text-decoration: none;
-            color: #1a73e8;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #0d47a1;
-            transform: translateY(-2px);
-        }
-
         section {
             min-height: 100vh;
-            padding: 5rem 2rem;
+            padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
             opacity: 0;
@@ -64,16 +41,12 @@
         }
 
         .card {
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.95);
             border-radius: 15px;
             padding: 2rem;
             margin: 2rem 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
         }
 
         h1 {
@@ -87,68 +60,39 @@
             margin: 1.5rem 0;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: #1a73e8;
-            color: white;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #0d47a1;
-            transform: scale(1.05);
-        }
-
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         @media (max-width: 768px) {
-            nav {
-                text-align: center;
-                padding: 1rem 0;
+            section {
+                padding: 2rem 1rem;
             }
-            nav a {
-                display: block;
-                margin: 0.5rem 0;
+            
+            .card {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#home">Beranda</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#forum">Forum</a>
-        <a href="#event">Event</a>
-        <a href="#contact">Kontak</a>
-        <a href="#policy">Kebijakan</a>
-    </nav>
-
     <section id="home" class="visible">
         <div class="card">
             <h1>Otaku Shogunate</h1>
-            <p>Selamat datang di komunitas pecinta budaya Jepang terbesar di Indonesia! Kami adalah wadah berkumpulnya para penggemar berbagai aspek kebudayaan Jepang mulai dari bahasa, wisata, tradisi budaya, hingga industri kreatif. Bersama kita belajar, berbagi, dan membangun jaringan untuk semakin mendalami kekayaan budaya Jepang.</p>
+            <p>Komunitas pecinta budaya Jepang terbesar di Indonesia yang menjadi wadah berkumpulnya para penggemar berbagai aspek kebudayaan Jepang. Bersama kita eksplorasi kekayaan bahasa, wisata, tradisi, hingga industri kreatif Jepang.</p>
         </div>
     </section>
 
     <section id="about">
         <div class="card">
             <h2>Tentang Kami</h2>
-            <article>
-                <h3>Visi & Misi</h3>
-                <p>Visi: Menjadi platform utama integrasi budaya Jepang-Indonesia melalui pertukaran budaya dan pengetahuan.</p>
-                <p>Misi: Menyediakan wadah edukasi, diskusi, dan pengembangan minat masyarakat terhadap berbagai aspek kebudayaan Jepang.</p>
-            </article>
-            <article>
-                <h3>Sejarah</h3>
-                <p>Berdiri tahun 2019 berawal dari penyelesaian konflik antar dua anggota komunitas anime lokal oleh tiga mediator yang kemudian sepakat membentuk wadah yang lebih inklusif untuk semua pecinta budaya Jepang.</p>
-            </article>
+            <h3>Visi Misi</h3>
+            <p>Membangun platform integrasi budaya Jepang-Indonesia melalui pertukaran pengetahuan dan pengalaman budaya yang berkelanjutan.</p>
+            <h3>Sejarah</h3>
+            <p>Berdiri 2019 melalui resolusi konflik komunitas anime oleh tiga mediator yang kemudian membentuk wadah lebih inklusif untuk semua pecinta budaya Jepang.</p>
         </div>
     </section>
 
@@ -156,42 +100,49 @@
         <div class="card">
             <h2>Forum Diskusi</h2>
             <div class="contact-info">
-                <a href="#" class="btn">Website</a>
-                <a href="#" class="btn">WhatsApp Group</a>
-                <a href="#" class="btn">Discord Community</a>
-                <a href="#" class="btn">WhatsApp Channel</a>
+                <div>
+                    <h3>Website</h3>
+                    <p>(Coming Soon)</p>
+                </div>
+                <div>
+                    <h3>WhatsApp</h3>
+                    <p>(Link Group)</p>
+                </div>
+                <div>
+                    <h3>Discord</h3>
+                    <p>(Invite Server)</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="event">
         <div class="card">
-            <h2>Event Kami</h2>
-            <p>Selenggarakan berbagai event menarik sepanjang tahun:</p>
+            <h2>Event</h2>
             <ul>
                 <li>Giveaway merchandise eksklusif</li>
-                <li>Lomba cosplay tahunan</li>
+                <li>Lomba foto cosplay tahunan</li>
                 <li>Kompetensi bahasa Jepang</li>
-                <li>Webinar budaya & industri</li>
+                <li>Seminar industri kreatif</li>
             </ul>
         </div>
     </section>
 
     <section id="contact">
         <div class="card">
-            <h2>Kontak Admin</h2>
+            <h2>Kontak</h2>
             <div class="contact-info">
                 <div>
                     <h3>WhatsApp</h3>
-                    <p>(akan diisi)</p>
+                    <p>(+62 812-3456-7890)</p>
                 </div>
                 <div>
                     <h3>Telegram</h3>
-                    <p>(akan diisi)</p>
+                    <p>(@otaku_shogun)</p>
                 </div>
                 <div>
                     <h3>Discord</h3>
-                    <p>(akan diisi)</p>
+                    <p>(OtakuShogunate#1234)</p>
                 </div>
             </div>
         </div>
@@ -199,19 +150,18 @@
 
     <section id="policy">
         <div class="card">
-            <h2>Kebijakan Komunitas</h2>
+            <h2>Kebijakan</h2>
             <ul>
-                <li>Menghormati perbedaan pendapat</li>
-                <li>Tidak mengandung SARA</li>
-                <li>Dilarang spam/self-promote</li>
-                <li>Patuhi aturan platform masing-masing media</li>
-                <li>Konten edukatif & positif</li>
+                <li>Menghargai perbedaan pendapat</li>
+                <li>Dilarang konten sensitif SARA</li>
+                <li>Tidak melakukan spam</li>
+                <li>Fokus konten positif</li>
             </ul>
         </div>
     </section>
 
     <script>
-        // Animasi scroll
+        // Animasi scroll sederhana
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
