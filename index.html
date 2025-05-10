@@ -3,175 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Otaku Shogunate - Komunitas Pecinta Jepang Indonesia</title>
+    <title>Otaku Shogunate</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', sans-serif;
-            scroll-behavior: smooth;
         }
 
         body {
-            background: linear-gradient(120deg, #1a73e8, #ffffff);
-            animation: gradient 15s ease infinite;
-            background-size: 400% 400%;
+            background: linear-gradient(45deg, #1a237e, #000000);
+            color: white;
+            min-height: 100vh;
+            position: relative;
+            background-attachment: fixed;
         }
 
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/png;base64,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');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            transition: 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            border-color: white;
         }
 
         section {
-            min-height: 100vh;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             opacity: 0;
             transform: translateY(20px);
-            transition: 1s;
+            transition: 0.6s;
         }
 
-        section.visible {
+        section.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .card {
-            background: rgba(255,255,255,0.95);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
         h1 {
-            color: #1a73e8;
+            font-size: 3rem;
             margin-bottom: 2rem;
-            font-size: 2.5em;
+            text-shadow: 0 0 15px rgba(255,255,255,0.5);
         }
 
         h2 {
-            color: #0d47a1;
-            margin: 1.5rem 0;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid white;
+            text-shadow: 0 0 10px white;
         }
 
-        .contact-info {
+        p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .forum-grid, .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        ul {
+            padding-left: 2rem;
+            margin: 1rem 0;
         }
 
         @media (max-width: 768px) {
-            section {
-                padding: 2rem 1rem;
+            nav {
+                text-align: center;
+                padding: 1rem 0;
             }
-            
-            .card {
-                padding: 1.5rem;
+            nav a {
+                margin: 0 0.5rem;
+                font-size: 0.9rem;
+            }
+            h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <section id="home" class="visible">
-        <div class="card">
-            <h1>Otaku Shogunate</h1>
-            <p>Komunitas pecinta budaya Jepang terbesar di Indonesia yang menjadi wadah berkumpulnya para penggemar berbagai aspek kebudayaan Jepang. Bersama kita eksplorasi kekayaan bahasa, wisata, tradisi, hingga industri kreatif Jepang.</p>
-        </div>
+    <div class="noise-overlay"></div>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#forum">Forum</a>
+        <a href="#event">Event</a>
+        <a href="#contact">Kontak</a>
+        <a href="#policy">Kebijakan</a>
+    </nav>
+
+    <section id="home" class="active">
+        <h1>Otaku Shogunate</h1>
+        <p>Selamat datang di komunitas pecinta budaya Jepang terbesar di Indonesia! Otaku Shogunate merupakan wadah bagi para pengagum bahasa, wisata, budaya, dan industri kreatif Jepang. Kami berkomitmen untuk menyatukan berbagai kalangan dalam semangat kekeluargaan dan kecintaan terhadap Negeri Sakura.</p>
     </section>
 
     <section id="about">
-        <div class="card">
-            <h2>Tentang Kami</h2>
-            <h3>Visi Misi</h3>
-            <p>Membangun platform integrasi budaya Jepang-Indonesia melalui pertukaran pengetahuan dan pengalaman budaya yang berkelanjutan.</p>
-            <h3>Sejarah</h3>
-            <p>Berdiri 2019 melalui resolusi konflik komunitas anime oleh tiga mediator yang kemudian membentuk wadah lebih inklusif untuk semua pecinta budaya Jepang.</p>
-        </div>
+        <h2>Tentang Kami</h2>
+        <p><strong>Visi:</strong> Menjadi pusat komunitas budaya Jepang terintegrasi di Asia Tenggara</p>
+        <p><strong>Misi:</strong> Membangun jaringan kolaboratif antarpecinta budaya Jepang melalui berbagai program edukasi dan pertukaran budaya</p>
+        <p>Berawal dari pertikaian dua anggota komunitas yang diselesaikan secara kekeluargaan oleh tiga mediator pada 2015, kami berkembang menjadi organisasi dengan lebih dari 50.000 anggota aktif di seluruh Indonesia.</p>
     </section>
 
     <section id="forum">
-        <div class="card">
-            <h2>Forum Diskusi</h2>
-            <div class="contact-info">
-                <div>
-                    <h3>Website</h3>
-                    <p>(Coming Soon)</p>
-                </div>
-                <div>
-                    <h3>WhatsApp</h3>
-                    <p>(Link Group)</p>
-                </div>
-                <div>
-                    <h3>Discord</h3>
-                    <p>(Invite Server)</p>
-                </div>
+        <h2>Forum Diskusi</h2>
+        <div class="forum-grid">
+            <div class="card">
+                <h3>Website Resmi</h3>
+                <p>Segera Hadir</p>
+            </div>
+            <div class="card">
+                <h3>WhatsApp Group</h3>
+                <p>Link Tersedia Soon</p>
+            </div>
+            <div class="card">
+                <h3>Discord Community</h3>
+                <p>Dalam Pengembangan</p>
             </div>
         </div>
     </section>
 
     <section id="event">
+        <h2>Event Kami</h2>
         <div class="card">
-            <h2>Event</h2>
             <ul>
-                <li>Giveaway merchandise eksklusif</li>
-                <li>Lomba foto cosplay tahunan</li>
-                <li>Kompetensi bahasa Jepang</li>
-                <li>Seminar industri kreatif</li>
+                <li>Giveaway bulanan dengan hadiah merchandise eksklusif</li>
+                <li>Kompetisi cosplay tahunan</li>
+                <li>Lomba menulis kanji tingkat nasional</li>
+                <li>Webinar budaya dengan native speaker</li>
             </ul>
         </div>
     </section>
 
     <section id="contact">
-        <div class="card">
-            <h2>Kontak</h2>
-            <div class="contact-info">
-                <div>
-                    <h3>WhatsApp</h3>
-                    <p>(+62 812-3456-7890)</p>
-                </div>
-                <div>
-                    <h3>Telegram</h3>
-                    <p>(@otaku_shogun)</p>
-                </div>
-                <div>
-                    <h3>Discord</h3>
-                    <p>(OtakuShogunate#1234)</p>
-                </div>
+        <h2>Kontak Admin</h2>
+        <div class="contact-grid">
+            <div class="card">
+                <h3>WhatsApp</h3>
+                <p>+62 800 1234 5678</p>
+            </div>
+            <div class="card">
+                <h3>Telegram</h3>
+                <p>@OtakuShogunateID</p>
+            </div>
+            <div class="card">
+                <h3>Discord</h3>
+                <p>discord.gg/otakushogunate</p>
             </div>
         </div>
     </section>
 
     <section id="policy">
+        <h2>Kebijakan Komunitas</h2>
         <div class="card">
-            <h2>Kebijakan</h2>
             <ul>
                 <li>Menghargai perbedaan pendapat</li>
-                <li>Dilarang konten sensitif SARA</li>
-                <li>Tidak melakukan spam</li>
-                <li>Fokus konten positif</li>
+                <li>Tidak mengandung SARA dalam diskusi</li>
+                <li>Mempertahankan etika berinternet</li>
+                <li>Privasi data anggota dijamin</li>
+                <li>Sanksi untuk pelanggar aturan</li>
             </ul>
         </div>
     </section>
 
     <script>
-        // Animasi scroll sederhana
+        // Animasi scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
                 }
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('section').forEach(section => {
+        document.querySelectorAll('section').forEach((section) => {
             observer.observe(section);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
         });
     </script>
 </body>
