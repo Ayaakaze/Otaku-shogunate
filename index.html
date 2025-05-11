@@ -412,7 +412,7 @@
                     <h3>📱 WhatsApp</h3>
                     <p class="contact-info">+62 851-8780-9453</p>
                     <a href="https://wa.me/+6285187809453" target="_blank" class="contact-btn wa-btn">
-                        Chat via WhatsApp
+                        Mulai Chat
                     </a>
                 </div>
             </div>
@@ -423,7 +423,7 @@
                     <h3>✈️ Telegram</h3>
                     <p class="contact-info">@NerooXflows</p>
                     <a href="https://t.me/NerooXflows" target="_blank" class="contact-btn telegram-btn">
-                        Message via Telegram
+                        Kirim Pesan
                     </a>
                 </div>
             </div>
@@ -432,13 +432,13 @@
             <div class="contact-card">
                 <div class="contact-content">
                     <h3>🎮 Discord</h3>
-                    <p class="contact-info">nerooxflows</p>
-                    <div class="discord-btns">
-                        <button class="contact-btn discord-btn" onclick="copyDiscordUsername()">
+                    <p class="contact-info discord-username">nerooxflows</p>
+                    <div class="discord-actions">
+                        <button class="discord-copy-btn" onclick="copyDiscordUsername()">
                             Salin Username
                         </button>
-                        <a href="https://discord.gg/asYwM9mv" target="_blank" class="contact-btn discord-btn server-btn">
-                            Join Server
+                        <a href="https://discord.gg/asYwM9mv" target="_blank" class="discord-invite-btn">
+                            Join via Invite
                         </a>
                     </div>
                 </div>
@@ -446,30 +446,165 @@
         </div>
 
         <div class="contact-note">
-            <p>⏰ Jam Operasional: Senin-Minggu (09:00 - 21:00 WIB)</p>
-            <p>⚠️ Untuk bantuan teknis via Discord, bisa langsung join server komunitas</p>
+            <p>⏰ Jam Responsif: Setiap Hari (09:00 - 21:00 WIB)</p>
+            <p>🔗 Link invite Discord berlaku permanen untuk anggota baru</p>
         </div>
     </div>
 </section>
 
 <style>
-/* ... (CSS sebelumnya tetap sama) ... */
+/* Base Styles */
+.contact-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
 
-.discord-btns {
+.contact-grid {
     display: grid;
-    gap: 0.8rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-.server-btn {
-    background-color: #5865F2;
+/* Card Styling */
+.contact-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.contact-content {
+    padding: 1.8rem;
+    text-align: center;
+}
+
+h3 {
+    color: #2d3748;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.contact-info {
+    color: #4a5568;
+    font-size: 1.05rem;
+    margin: 1.2rem 0;
+    font-weight: 500;
+}
+
+/* Button Styles */
+.contact-btn {
+    display: block;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1.5px solid transparent;
+}
+
+/* WhatsApp Button */
+.wa-btn {
+    background-color: #f0fff4;
+    color: #25D366;
+    border-color: #25D366;
+}
+
+.wa-btn:hover {
+    background-color: #25D366;
+    color: white;
+}
+
+/* Telegram Button */
+.telegram-btn {
+    background-color: #eff9ff;
+    color: #0088cc;
+    border-color: #0088cc;
+}
+
+.telegram-btn:hover {
+    background-color: #0088cc;
+    color: white;
+}
+
+/* Discord Section */
+.discord-username {
+    font-family: 'Courier New', monospace;
+    background: #f8fafc;
+    padding: 0.5rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 1rem auto;
+}
+
+.discord-actions {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 0.8rem;
+    flex-direction: column;
+    margin-top: 1.2rem;
 }
 
-.server-btn:hover {
-    background-color: #4752c4;
+.discord-copy-btn,
+.discord-invite-btn {
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.discord-copy-btn {
+    background: #f8fafc;
+    color: #7289da;
+    border: 1.5px solid #e2e8f0;
+}
+
+.discord-copy-btn:hover {
+    background: #7289da;
+    color: white;
+    border-color: #7289da;
+}
+
+.discord-invite-btn {
+    background: #7289da15;
+    color: #7289da;
+    border: 1.5px solid #7289da30;
+}
+
+.discord-invite-btn:hover {
+    background: #7289da;
+    color: white;
+    border-color: #7289da;
+}
+
+/* Note Section */
+.contact-note {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        padding: 1.2rem;
+    }
 }
 </style>
 
@@ -477,8 +612,8 @@
 function copyDiscordUsername() {
     const username = "nerooxflows";
     navigator.clipboard.writeText(username)
-        .then(() => alert('Username Discord admin berhasil disalin!'))
-        .catch(err => console.error('Gagal menyalin username:', err));
+        .then(() => alert('Username admin Discord berhasil disalin!'))
+        .catch(err => console.error('Gagal menyalin:', err));
 }
 </script>
 
