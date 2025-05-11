@@ -213,22 +213,144 @@
 </section>
 
     <section id="forum">
-        <h2>Forum Diskusi</h2>
+    <h2>Forum Diskusi Komunitas Otaku Shogunate</h2>
+    <div class="forum-container">
         <div class="forum-grid">
-            <div class="card">
-                <h3>Website Resmi</h3>
-                <p>https://otaku-shogunate.vercel.app/</p>
+            <!-- Website Resmi -->
+            <div class="forum-card">
+                <div class="card-content">
+                    <h3>🌐 Website Resmi</h3>
+                    <p class="card-desc">Kunjungi portal utama kami untuk informasi terupdate seputar event, artikel eksklusif, dan database anime terlengkap.</p>
+                    <a href="https://otaku-shogunate.vercel.app/" target="_blank" class="forum-btn website-btn">
+                        Buka Website
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <h3>WhatsApp Group</h3>
-                <p>https://chat.whatsapp.com/LslASPcFQeaFJovJMBbZyg</p>
+
+            <!-- WhatsApp Group -->
+            <div class="forum-card">
+                <div class="card-content">
+                    <h3>📱 WhatsApp Group</h3>
+                    <p class="card-desc">Bergabunglah dengan grup diskusi harian kami untuk berinteraksi langsung dengan anggota komunitas lainnya.</p>
+                    <a href="https://chat.whatsapp.com/LslASPcFQeaFJovJMBbZyg" target="_blank" class="forum-btn wa-btn">
+                        Join WhatsApp Group
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <h3>Discord Community</h3>
-                <p>https://discord.gg/qHkwKQks</p>
+
+            <!-- Discord Community -->
+            <div class="forum-card">
+                <div class="card-content">
+                    <h3>🎮 Discord Server</h3>
+                    <p class="card-desc">Nikmati forum diskusi terstruktur dengan berbagai channel khusus untuk cosplay, fanart, dan watch party.</p>
+                    <a href="https://discord.gg/qHkwKQks" target="_blank" class="forum-btn discord-btn">
+                        Join Discord Server
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
+        
+        <div class="forum-note">
+            <p>📢 Catatan: Semua link akan membuka tab baru. Pastikan browser Anda tidak memblokir pop-up.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+.forum-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.forum-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.forum-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.forum-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.card-desc {
+    color: #4a5568;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    min-height: 80px;
+}
+
+.forum-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.website-btn {
+    background-color: #4299e1;
+    color: white;
+}
+
+.wa-btn {
+    background-color: #25D366;
+    color: white;
+}
+
+.discord-btn {
+    background-color: #7289da;
+    color: white;
+}
+
+.forum-btn:hover {
+    filter: brightness(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.forum-note {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+@media (max-width: 768px) {
+    .forum-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-desc {
+        min-height: auto;
+    }
+}
+</style>
 
     <section id="event" class="event-section">
     <h2 class="section-title">🎪 Jelajahi Dunia Seru Event Kami! 🎪</h2>
