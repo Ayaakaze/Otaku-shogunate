@@ -403,22 +403,84 @@
 </section>
 
     <section id="contact">
-        <h2>Kontak Admin</h2>
+    <h2>Hubungi Admin Komunitas</h2>
+    <div class="contact-container">
         <div class="contact-grid">
-            <div class="card">
-                <h3>WhatsApp</h3>
-                <p>+62 851-8780-9453</p>
+            <!-- WhatsApp -->
+            <div class="contact-card">
+                <div class="contact-content">
+                    <h3>📱 WhatsApp</h3>
+                    <p class="contact-info">+62 851-8780-9453</p>
+                    <a href="https://wa.me/+6285187809453" target="_blank" class="contact-btn wa-btn">
+                        Chat via WhatsApp
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <h3>Telegram</h3>
-                <p>@NerooXflows</p>
+
+            <!-- Telegram -->
+            <div class="contact-card">
+                <div class="contact-content">
+                    <h3>✈️ Telegram</h3>
+                    <p class="contact-info">@NerooXflows</p>
+                    <a href="https://t.me/NerooXflows" target="_blank" class="contact-btn telegram-btn">
+                        Message via Telegram
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <h3>Discord</h3>
-                <p>nerooxflows</p>
+
+            <!-- Discord -->
+            <div class="contact-card">
+                <div class="contact-content">
+                    <h3>🎮 Discord</h3>
+                    <p class="contact-info">nerooxflows</p>
+                    <div class="discord-btns">
+                        <button class="contact-btn discord-btn" onclick="copyDiscordUsername()">
+                            Salin Username
+                        </button>
+                        <a href="https://discord.gg/asYwM9mv" target="_blank" class="contact-btn discord-btn server-btn">
+                            Join Server
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+
+        <div class="contact-note">
+            <p>⏰ Jam Operasional: Senin-Minggu (09:00 - 21:00 WIB)</p>
+            <p>⚠️ Untuk bantuan teknis via Discord, bisa langsung join server komunitas</p>
+        </div>
+    </div>
+</section>
+
+<style>
+/* ... (CSS sebelumnya tetap sama) ... */
+
+.discord-btns {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.server-btn {
+    background-color: #5865F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.server-btn:hover {
+    background-color: #4752c4;
+}
+</style>
+
+<script>
+function copyDiscordUsername() {
+    const username = "nerooxflows";
+    navigator.clipboard.writeText(username)
+        .then(() => alert('Username Discord admin berhasil disalin!'))
+        .catch(err => console.error('Gagal menyalin username:', err));
+}
+</script>
 
     <<section id="policy">
     <h2>📜 PERATURAN KOMUNITAS & SERVER</h2>
